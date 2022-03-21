@@ -1,4 +1,5 @@
 let
 	pkgs = import <nixpkgs> {} ;
+	sources = import ./nix/sources.nix;
 in
-	pkgs.haskellPackages.callPackage ./default.nix {}
+	sources.nixpkgs;

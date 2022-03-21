@@ -10,7 +10,7 @@ let
 
 in with pkgs;
 stdenv.mkDerivation rec {
-  name = "Telegram-Desktop";
+  name = "telegram-desktop";
 
   version = "3.6.1";
 
