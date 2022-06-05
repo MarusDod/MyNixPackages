@@ -8,7 +8,7 @@
 
     zipFile = fetchzip {
       url = https://releases.rapidminer.com/latest/rapidminer-studio/rapidminer-studio.zip;
-      hash = "sha256-JrGAWC1dhZjcszz9oTknt4Rs47TwL11NiPEFd7eaeaI=";
+      sha256 = "723jaD7EgqmJO/4ojz3PRpjQ5kpc6DXLGwAgRzC8U2A=";
     };
 
     icon = fetchurl {
@@ -19,7 +19,7 @@
   in with pkgs; 
   stdenv.mkDerivation rec {
     inherit pname;
-    version = "9.10.1";
+    version = "9.10.9";
     src = zipFile;
 
   
@@ -45,7 +45,7 @@
 
     desktopItem = makeDesktopItem {
       name = pname;
-      exec = "$out/bin/${executableName}";
+      exec = "@out@/bin/${executableName}";
       desktopName = pname;
       icon = icon;
       comment = meta.description;
