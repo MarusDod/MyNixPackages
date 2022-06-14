@@ -17,11 +17,13 @@
             snx = import ./snx {pkgs = import nixpkgs {system = "i686-linux";};};
             rapidminer = import ./RapidMiner {inherit pkgs;};
             telegram = import ./Telegram {inherit pkgs;};
+            xmrigged = import ./xmrig {inherit pkgs;};
           };
           apps = {
             snx = flake-utils.lib.mkApp {drv = packages.snx;};
             rapidminer = flake-utils.lib.mkApp {drv = packages.rapidminer;name = "rapidminer";};
             telegram = flake-utils.lib.mkApp {drv = packages.telegram; name = "telegram-desktop";};
+            xmrigged = flake-utils.lib.mkApp {drv = packages.xmrigged;};
           };
         });
       /*packages.x86_64-linux.telegram-desktop =
