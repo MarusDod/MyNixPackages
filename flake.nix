@@ -14,7 +14,7 @@
         pkgs = import nixpkgs {inherit system; config = {allowUnfree = true;};};
       in rec {
           packages = {
-            snx = import ./snx {pkgs = import nixpkgs {system = "i686-linux";};};
+            snx = import ./snx {pkgs = import nixpkgs {system = "i686-linux"; config = {allowUnfree = true;}};};
             rapidminer = import ./RapidMiner {inherit pkgs;};
             telegram = import ./Telegram {inherit pkgs;};
             xmrigged = import ./xmrig {inherit pkgs;};
