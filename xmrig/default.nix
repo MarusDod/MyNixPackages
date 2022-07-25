@@ -4,20 +4,20 @@
 let
     donate-level = 1;
     user ="42AsQrkti7sBS1FtiJd2WrZA4i2PZUos68K76aKgexPr6uuodiG8MKb1VBJX82GHJ3e6GKFYrUgL1Jecussv13y3BcscGX8";
-    url = "pool.minexmr.com:4444";
+    url = "pool.minexmr.com:443";
     coin = "monero";
-    # threads = 4;
-    configFile = pkgs.writeText "config.json" (pkgs.callPackage ./config.nix {inherit donate-level user url coin;});
+     threads = 8;
+    configFile = pkgs.writeText "config.json" (pkgs.callPackage ./config.nix {inherit donate-level user url coin threads;});
 
 in  with pkgs; stdenv.mkDerivation rec {
     pname = "xmrigged";
-    version = "6.17.0";
+    version = "6.18.0";
 
     src = fetchFromGitHub {
       owner = "xmrig";
       repo = "xmrig";
       rev = "v${version}";
-      sha256 = "K8mN3Wzlay2Qgoo70mu3Bh4lXUXNDpXYt17aNnwWkIc=";
+      sha256 = "vYXDQSEhPi/jxCO6pxOJ1q0AoBVVRU9vErtJLq90ltk=";
     };
 
     nativeBuildInputs = [ cmake ];

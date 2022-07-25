@@ -10,13 +10,12 @@
                 algo = null;
                 inherit user url coin;
                 keepalive = true;
-                tls = false;
+                tls = true;
             }
           ];
         cpu = {
           enabled = true;
           huge-pages = true;
-          rx = let n = -1; in [n n n n];
-
+          rx = builtins.genList (x: -1) threads;
         };
   }
